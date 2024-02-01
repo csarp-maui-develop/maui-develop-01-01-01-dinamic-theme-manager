@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModel="clr-namespace:Kreta.Maui.ViewModel"
+             x:DataType="viewModel:LoginViewModel"
+             x:Class="Kreta.Maui.Pages.LoginPage"
+             Title="LoginPage">
+    <ContentPage.BindingContext>
+        <viewModel:LoginViewModel/>
+    </ContentPage.BindingContext>
+    <VerticalStackLayout Padding="25"
+                         Spacing="25">
+        <Label 
+            Text="Bejelentkezés"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+        />
+        <Button 
+            Text="Bejelentkezés"
+            Command="{Binding LoginCommand}"
+        />
+    </VerticalStackLayout>
+</ContentPage>

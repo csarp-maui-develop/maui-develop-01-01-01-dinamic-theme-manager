@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModel="clr-namespace:Kreta.Maui.ViewModel"
+             x:DataType="viewModel:ProfilViewModel"
+             x:Class="Kreta.Maui.Pages.ProfilPage"
+             Title="Profil oldal">
+    <ContentPage.BindingContext>
+        <viewModel:ProfilViewModel/>
+    </ContentPage.BindingContext>
+    <VerticalStackLayout Padding="25"
+                         Spacing="25">
+        <Label 
+            Text="Profil"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" 
+        />
+        <Button 
+            Text="Kifejelentkezés"
+            Command="{Binding LogoutCommand}"
+        />
+    </VerticalStackLayout>
+</ContentPage>
