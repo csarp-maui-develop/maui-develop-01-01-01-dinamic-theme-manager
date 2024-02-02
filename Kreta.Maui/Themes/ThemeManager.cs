@@ -7,6 +7,7 @@ namespace Kreta.Maui.Themes
         private static readonly IDictionary<string, ResourceDictionary> _themesMap = new Dictionary<string, ResourceDictionary>
         {
             [nameof(ThemesRosurce.Default)] = new ThemesRosurce.Default(),
+            [nameof(ThemesRosurce.Dark)] = new ThemesRosurce.Dark(),
             [nameof(ThemesRosurce.Fire)] = new ThemesRosurce.Fire(),
             [nameof(ThemesRosurce.Natural)] = new ThemesRosurce.Natural(),
         };
