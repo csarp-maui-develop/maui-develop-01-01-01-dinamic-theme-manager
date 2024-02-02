@@ -19,5 +19,10 @@
             Text="Kifejelentkezés"
             Command="{Binding LogoutCommand}"
         />
+        <BoxView Color="{DynamicResource Primary}" HeightRequest="10"/>
+        <Button
+            Text="Tűzszín"
+            Command="{Binding SetFireThemeCommand}"
+        />
     </VerticalStackLayout>
 </ContentPage>

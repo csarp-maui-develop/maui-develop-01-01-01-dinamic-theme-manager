@@ -2,6 +2,7 @@
 using CommunityToolkit.Mvvm.Input;
 using Kreta.Maui.Pages;
 using Kreta.Maui.Services;
+using Kreta.Maui.Themes;
 
 namespace Kreta.Maui.ViewModel
 {
@@ -24,6 +25,12 @@ namespace Kreta.Maui.ViewModel
         {
             _authService.Logout();
             await Shell.Current.GoToAsync($"//{nameof(LoginPage)}");
+        }
+
+        [RelayCommand]
+        public void SetFireTheme()
+        {
+            ThemeManager.SetTheme("Fire");
         }
     }
 }
