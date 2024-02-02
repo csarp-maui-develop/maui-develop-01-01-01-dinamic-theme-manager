@@ -10,5 +10,24 @@ namespace Kreta.Maui.Themes
             [nameof(ThemesRosurce.Fire)] = new ThemesRosurce.Fire(),
             [nameof(ThemesRosurce.Natural)] = new ThemesRosurce.Natural(),
         };
+
+        public static string ThemeName { get; set; } = nameof(ThemesRosurce.Default);
+
+        public static void SetTheme(string themeName)
+        {
+            if (themeName == ThemeName)
+                return;
+            try
+            {
+                var themeToBeApplied = _themesMap[themeName];
+                if (Application.Current is not null)
+                {
+                    Application.Current.Resources.MergedDictionaries.Clear();
+                    Application.Current.Resources.MergedDictionaries.Add(themeToBeApplied);
+                    ThemeName = themeName;
+                }
+            }
+            catch (Exception ex) { }
+        }
     }
 }
