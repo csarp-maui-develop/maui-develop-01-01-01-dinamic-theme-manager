@@ -17,7 +17,7 @@
         />
         <BoxView Color="{DynamicResource Primary}" HeightRequest="10"/>
         <Grid ColumnDefinitions="*,Auto">
-            <Label Grid.Column="0" Text="Téma: Alapértelmezett" VerticalOptions="Center"/>
+            <Label Grid.Column="0" Text="{Binding ThemeHungarianName}" VerticalOptions="Center"/>
             <Button Grid.Column="1" Text="Téma választás" HorizontalOptions="End" VerticalOptions="Center" Clicked="Button_Clicked"/>
         </Grid>
         <Button 

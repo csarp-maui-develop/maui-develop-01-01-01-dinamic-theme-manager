@@ -28,6 +28,9 @@ namespace Kreta.Maui.Themes
             }
         }
 
+        public static string ThemeName { get; set; } = nameof(ThemesRosurce.Default);
+        public static string ThemeHungiranName => _themeHungarianName.FirstOrDefault(themeName => themeName.Key == ThemeName).Key;
+
         public static string[] GetHungarianThemeName()
         {
             return _themeHungarianName.Values.ToArray();
@@ -49,8 +52,6 @@ namespace Kreta.Maui.Themes
                 SetTheme(nameof(ThemesRosurce.Default));
             }
         }
-
-        public static string ThemeName { get; set; } = nameof(ThemesRosurce.Default);
 
         public static void SetTheme(string themeName)
         {

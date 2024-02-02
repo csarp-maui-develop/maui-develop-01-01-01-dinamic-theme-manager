@@ -11,6 +11,9 @@ namespace Kreta.Maui.ViewModel
     {
         private readonly IAuthService _authService;
 
+        [ObservableProperty]
+        public string _themeHungarianName= $"Téma: {ThemeManager.ThemeHungiranName}";
+
         public ProfilViewModel()
         {
             _authService = new AuthService();
@@ -33,6 +36,7 @@ namespace Kreta.Maui.ViewModel
 
         private void OnThemeChanged(string themeHungarianName)
         {
+            ThemeHungarianName = $"Téma: {themeHungarianName}";
             string themeName=ThemeManager.GetThemeName(themeHungarianName);
             ThemeManager.SetTheme(themeName);
         }
