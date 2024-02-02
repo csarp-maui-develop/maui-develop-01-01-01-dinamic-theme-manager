@@ -12,7 +12,8 @@ public partial class ProfilPage : ContentPage
 
     private async void Button_Clicked(object sender, EventArgs e)
     {
-		string newTheme = await DisplayActionSheet("Válasszon témát", "Cancel", null, ThemeManager._themeHungarianName.Values.ToArray());
-        WeakReferenceMessenger.Default.Send(newTheme);
+		string newTheme = await DisplayActionSheet("Válasszon témát", "Cancel", null, ThemeManager.GetHungarianThemeName());
+		if (!string.IsNullOrEmpty(newTheme) && newTheme!="Cancel" )
+			WeakReferenceMessenger.Default.Send(newTheme);
     }
 }

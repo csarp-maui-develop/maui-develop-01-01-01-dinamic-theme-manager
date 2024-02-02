@@ -12,19 +12,30 @@ namespace Kreta.Maui.Themes
             [nameof(ThemesRosurce.Natural)] = new ThemesRosurce.Natural(),
         };
 
-        public static readonly IDictionary<string, string> _themeHungarianName = new Dictionary<string, string>()
+        private static readonly IDictionary<string, string> _themeHungarianName = new Dictionary<string, string>()
         {
             [nameof(ThemesRosurce.Default)] = "Alapértelmezett",
             [nameof(ThemesRosurce.Dark)] = "Sötét",
             [nameof(ThemesRosurce.Fire)] = "Tűz",
             [nameof(ThemesRosurce.Natural)] = "Természetes",
         };
+
         static ThemeManager()
         {
             if (Application.Current is not null)
             {
                 Application.Current.RequestedThemeChanged += Current_RequestedThemeChanged;
             }
+        }
+
+        public static string[] GetHungarianThemeName()
+        {
+            return _themeHungarianName.Values.ToArray();
+        }
+
+        public static string GetThemeName(string hungarianThemeName)
+        {
+            return _themeHungarianName.FirstOrDefault(themeName => themeName.Value == hungarianThemeName).Key;
         }
 
         private static void Current_RequestedThemeChanged(object? sender, AppThemeChangedEventArgs e)
