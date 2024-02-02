@@ -11,6 +11,26 @@ namespace Kreta.Maui.Themes
             [nameof(ThemesRosurce.Natural)] = new ThemesRosurce.Natural(),
         };
 
+        static ThemeManager()
+        {
+            if (Application.Current is not null)
+            {
+                Application.Current.RequestedThemeChanged += Current_RequestedThemeChanged;
+            }
+        }
+
+        private static void Current_RequestedThemeChanged(object? sender, AppThemeChangedEventArgs e)
+        {
+            if (e.RequestedTheme==AppTheme.Dark)
+            {
+                SetTheme(nameof(ThemesRosurce.Dark));
+            }
+            else
+            {
+                SetTheme(nameof(ThemesRosurce.Default));
+            }
+        }
+
         public static string ThemeName { get; set; } = nameof(ThemesRosurce.Default);
 
         public static void SetTheme(string themeName)
