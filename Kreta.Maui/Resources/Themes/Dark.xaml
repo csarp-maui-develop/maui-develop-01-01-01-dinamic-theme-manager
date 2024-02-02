@@ -2,13 +2,14 @@
 <ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Kreta.Maui.Resources.Themes.Dark">
-    <Color x:Key="Primary">#141414</Color>
-    <Color x:Key="PrimaryDark">#111111</Color>
+    <Color x:Key="Primary">#414141</Color>
+    <Color x:Key="PrimaryDark">#313131</Color>
     <Color x:Key="PrimaryDarkText">Black</Color>
-    <Color x:Key="Secondary">#292929</Color>
+    <Color x:Key="Secondary">#717171</Color>
     <Color x:Key="SecondaryDarkText">#212121</Color>
     <Color x:Key="Tertiary">#010101</Color>
     <Color x:Key="ButtonBackground">#707070</Color>
+    <Color x:Key="PageBackgrund">#101010</Color>
 
     <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource Primary}"/>
     <SolidColorBrush x:Key="SecondaryBrush" Color="{StaticResource Secondary}"/>

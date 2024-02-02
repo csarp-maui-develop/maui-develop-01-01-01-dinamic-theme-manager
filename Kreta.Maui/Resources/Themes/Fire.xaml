@@ -10,6 +10,7 @@
     <Color x:Key="SecondaryDarkText">#8C001A</Color>
     <Color x:Key="Tertiary">#FF2400</Color>
     <Color x:Key="ButtonBackground">#FF8C00</Color>
+    <Color x:Key="PageBackgrund">#DC381F</Color>
 
     <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource Primary}"/>
     <SolidColorBrush x:Key="SecondaryBrush" Color="{StaticResource Secondary}"/>
