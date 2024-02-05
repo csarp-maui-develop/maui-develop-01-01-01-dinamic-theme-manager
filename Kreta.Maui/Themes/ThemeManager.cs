@@ -4,6 +4,8 @@ namespace Kreta.Maui.Themes
 {
     public class ThemeManager
     {
+        private const string ThemeKey = "theme";
+
         private static readonly IDictionary<string, ResourceDictionary> _themesMap = new Dictionary<string, ResourceDictionary>
         {
             [nameof(ThemesRosurce.Default)] = new ThemesRosurce.Default(),
@@ -26,6 +28,12 @@ namespace Kreta.Maui.Themes
             {
                 Application.Current.RequestedThemeChanged += Current_RequestedThemeChanged;
             }
+        }
+
+        public static void Initialize()
+        {
+            string themeName = Preferences.Default.Get<string>(ThemeKey, nameof(ThemesRosurce.Default));
+            SetTheme(themeName);
         }
 
         public static string ThemeName { get; set; } = nameof(ThemesRosurce.Default);
@@ -65,6 +73,7 @@ namespace Kreta.Maui.Themes
                     Application.Current.Resources.MergedDictionaries.Clear();
                     Application.Current.Resources.MergedDictionaries.Add(themeToBeApplied);
                     ThemeName = themeName;
+                    Preferences.Default.Set<string>(ThemeKey, themeName);
                 }
             }
             catch (Exception ex) { }

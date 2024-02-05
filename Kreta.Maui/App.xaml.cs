@@ -1,4 +1,6 @@
-﻿namespace Kreta.Maui
+﻿using Kreta.Maui.Themes;
+
+namespace Kreta.Maui
 {
     public partial class App : Application
     {
@@ -7,6 +9,12 @@
             InitializeComponent();
 
             MainPage = new AppShell();
+        }
+
+        protected override void OnStart()
+        {
+            ThemeManager.Initialize();
+            base.OnStart();
         }
     }
 }
