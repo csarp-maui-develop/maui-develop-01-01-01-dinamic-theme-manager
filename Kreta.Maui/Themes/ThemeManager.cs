@@ -5,6 +5,7 @@ namespace Kreta.Maui.Themes
     public class ThemeManager
     {
         private const string ThemeKey = "theme";
+        private const string PrevThemeKey = "prevtheme";
 
         private static readonly IDictionary<string, ResourceDictionary> _themesMap = new Dictionary<string, ResourceDictionary>
         {
@@ -32,7 +33,11 @@ namespace Kreta.Maui.Themes
 
         public static void Initialize()
         {
-            string themeName = Preferences.Default.Get<string>(ThemeKey, nameof(ThemesRosurce.Default));
+            string themeName = nameof(ThemesRosurce.Default);
+            if (Application.Current is not null && Application.Current.UserAppTheme == AppTheme.Dark)
+                themeName = nameof(ThemesRosurce.Dark);
+            else
+                themeName = Preferences.Default.Get<string>(ThemeKey, nameof(ThemesRosurce.Default));
             SetTheme(themeName);
         }
 
@@ -53,11 +58,16 @@ namespace Kreta.Maui.Themes
         {
             if (e.RequestedTheme==AppTheme.Dark)
             {
+                if (ThemeName!=nameof(ThemesRosurce.Dark))
+                {
+                    Preferences.Default.Set<string>(PrevThemeKey, ThemeName);
+                }
                 SetTheme(nameof(ThemesRosurce.Dark));
             }
             else
             {
-                SetTheme(nameof(ThemesRosurce.Default));
+                string prevThemeName=Preferences.Default.Get<string>(PrevThemeKey,nameof(ThemesRosurce.Dark));
+                SetTheme(prevThemeName);
             }
         }
 
