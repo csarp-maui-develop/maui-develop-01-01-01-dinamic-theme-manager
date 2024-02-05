@@ -4,7 +4,7 @@
              x:Class="Kreta.Maui.Resources.Themes.Dark">
     <Color x:Key="Primary">#414141</Color>
     <Color x:Key="PrimaryDark">#313131</Color>
-    <Color x:Key="PrimaryDarkText">Black</Color>
+    <Color x:Key="PrimaryDarkText">#B9B9B9</Color>
     <Color x:Key="Secondary">#717171</Color>
     <Color x:Key="SecondaryDarkText">#212121</Color>
     <Color x:Key="Tertiary">#010101</Color>
