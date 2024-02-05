@@ -21,7 +21,7 @@
             <Button Grid.Column="1" Text="Téma választás" HorizontalOptions="End" VerticalOptions="Center" Clicked="Button_Clicked"/>
         </Grid>
         <Button 
-            Text="Kifejelentkezés"
+            Text="Kijelentkezés"
             Command="{Binding LogoutCommand}"
         />
     </VerticalStackLayout>

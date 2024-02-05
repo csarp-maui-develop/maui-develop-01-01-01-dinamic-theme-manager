@@ -1,4 +1,4 @@
-﻿using ThemesRosurce = Kreta.Maui.Resources.Themes;
+﻿using ThemesResource = Kreta.Maui.Resources.Themes;
 
 namespace Kreta.Maui.Themes
 {
@@ -9,18 +9,18 @@ namespace Kreta.Maui.Themes
 
         private static readonly IDictionary<string, ResourceDictionary> _themesMap = new Dictionary<string, ResourceDictionary>
         {
-            [nameof(ThemesRosurce.Default)] = new ThemesRosurce.Default(),
-            [nameof(ThemesRosurce.Dark)] = new ThemesRosurce.Dark(),
-            [nameof(ThemesRosurce.Fire)] = new ThemesRosurce.Fire(),
-            [nameof(ThemesRosurce.Natural)] = new ThemesRosurce.Natural(),
+            [nameof(ThemesResource.Default)] = new ThemesResource.Default(),
+            [nameof(ThemesResource.Dark)] = new ThemesResource.Dark(),
+            [nameof(ThemesResource.Fire)] = new ThemesResource.Fire(),
+            [nameof(ThemesResource.Natural)] = new ThemesResource.Natural(),
         };
 
         private static readonly IDictionary<string, string> _themeHungarianName = new Dictionary<string, string>()
         {
-            [nameof(ThemesRosurce.Default)] = "Alapértelmezett",
-            [nameof(ThemesRosurce.Dark)] = "Sötét",
-            [nameof(ThemesRosurce.Fire)] = "Tűz",
-            [nameof(ThemesRosurce.Natural)] = "Természetes",
+            [nameof(ThemesResource.Default)] = "Alapértelmezett",
+            [nameof(ThemesResource.Dark)] = "Sötét",
+            [nameof(ThemesResource.Fire)] = "Tűz",
+            [nameof(ThemesResource.Natural)] = "Természetes",
         };
 
         static ThemeManager()
@@ -33,15 +33,15 @@ namespace Kreta.Maui.Themes
 
         public static void Initialize()
         {
-            string themeName = nameof(ThemesRosurce.Default);
+            string themeName = nameof(ThemesResource.Default);
             if (Application.Current is not null && Application.Current.UserAppTheme == AppTheme.Dark)
-                themeName = nameof(ThemesRosurce.Dark);
+                themeName = nameof(ThemesResource.Dark);
             else
-                themeName = Preferences.Default.Get<string>(ThemeKey, nameof(ThemesRosurce.Default));
+                themeName = Preferences.Default.Get<string>(ThemeKey, nameof(ThemesResource.Default));
             SetTheme(themeName);
         }
 
-        public static string ThemeName { get; set; } = nameof(ThemesRosurce.Default);
+        public static string ThemeName { get; set; } = nameof(ThemesResource.Default);
         public static string ThemeHungiranName => _themeHungarianName.FirstOrDefault(themeName => themeName.Key == ThemeName).Key;
 
         public static string[] GetHungarianThemeName()
@@ -58,15 +58,15 @@ namespace Kreta.Maui.Themes
         {
             if (e.RequestedTheme==AppTheme.Dark)
             {
-                if (ThemeName!=nameof(ThemesRosurce.Dark))
+                if (ThemeName!=nameof(ThemesResource.Dark))
                 {
                     Preferences.Default.Set<string>(PrevThemeKey, ThemeName);
                 }
-                SetTheme(nameof(ThemesRosurce.Dark));
+                SetTheme(nameof(ThemesResource.Dark));
             }
             else
             {
-                string prevThemeName=Preferences.Default.Get<string>(PrevThemeKey,nameof(ThemesRosurce.Dark));
+                string prevThemeName=Preferences.Default.Get<string>(PrevThemeKey,nameof(ThemesResource.Dark));
                 SetTheme(prevThemeName);
             }
         }
