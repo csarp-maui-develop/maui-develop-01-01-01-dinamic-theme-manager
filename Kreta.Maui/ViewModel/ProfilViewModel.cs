@@ -7,7 +7,7 @@ using Kreta.Maui.Themes;
 
 namespace Kreta.Maui.ViewModel
 {
-    public partial class ProfilViewModel : ObservableObject
+    public partial class ProfilViewModel : BaseViewModel
     {
         private readonly IAuthService _authService;
 

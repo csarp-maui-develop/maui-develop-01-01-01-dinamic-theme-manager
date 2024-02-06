@@ -5,7 +5,7 @@ using Kreta.Maui.Services;
 
 namespace Kreta.Maui.ViewModel
 {
-    public partial class LoginViewModel : ObservableObject
+    public partial class LoginViewModel : BaseViewModel
     {
         private readonly IAuthService _authService;
 
