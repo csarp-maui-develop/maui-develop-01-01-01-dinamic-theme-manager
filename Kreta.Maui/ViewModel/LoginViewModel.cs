@@ -19,6 +19,12 @@ namespace Kreta.Maui.ViewModel
             _authService = authService;
         }
 
+        [ObservableProperty]
+        public string _userName;
+
+        [ObservableProperty]
+        public string _password;
+
         [RelayCommand]
         public async Task Login()
         {
