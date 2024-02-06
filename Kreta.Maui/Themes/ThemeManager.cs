@@ -34,7 +34,7 @@ namespace Kreta.Maui.Themes
         public static void Initialize()
         {
             string themeName = nameof(ThemesResource.Default);
-            if (Application.Current is not null && Application.Current.UserAppTheme == AppTheme.Dark)
+            if (Application.Current is not null && Application.Current.PlatformAppTheme == AppTheme.Dark)
                 themeName = nameof(ThemesResource.Dark);
             else
                 themeName = Preferences.Default.Get<string>(ThemeKey, nameof(ThemesResource.Default));
