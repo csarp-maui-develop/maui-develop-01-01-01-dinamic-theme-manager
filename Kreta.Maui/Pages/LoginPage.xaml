@@ -8,8 +8,11 @@
     <ContentPage.BindingContext>
         <viewModel:LoginViewModel/>
     </ContentPage.BindingContext>
-    <VerticalStackLayout Padding="25"
-                         Spacing="25">
+    <VerticalStackLayout
+        Padding="25"
+        Spacing="25"
+        Background="{DynamicResource PageBackground}"
+        >
         <Label 
             Text="Bejelentkezés"
             VerticalOptions="Center" 
