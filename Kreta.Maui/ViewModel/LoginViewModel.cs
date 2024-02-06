@@ -20,10 +20,10 @@ namespace Kreta.Maui.ViewModel
         }
 
         [ObservableProperty]
-        public string _userName;
+        public string _userName=string.Empty;
 
         [ObservableProperty]
-        public string _password;
+        public string _password=string.Empty;
 
         [RelayCommand]
         public async Task Login()
