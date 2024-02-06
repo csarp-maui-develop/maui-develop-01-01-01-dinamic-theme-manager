@@ -12,7 +12,8 @@
                          Spacing="25"
                          Background="{DynamicResource PageBackground}"
                          >
-        <Label 
+        <Label
+            Style="{StaticResource Headline}"
             Text="Profil"
             VerticalOptions="Center" 
             HorizontalOptions="Center" 
